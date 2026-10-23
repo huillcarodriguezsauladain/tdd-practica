@@ -1,0 +1,15 @@
+# Archivos de Python generados automáticamente
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+.env
+.venv
+env/
+venv/
+
+# Configuración de editores
+.vscode/
+.idea/
