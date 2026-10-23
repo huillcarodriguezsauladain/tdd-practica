@@ -9,6 +9,12 @@ class TestFizzBuzz(unittest.TestCase):
         self.assertEqual(fizzbuzz(2), "2")
         self.assertEqual(fizzbuzz(4), "4")
 
+    # Ciclo 2: Probamos que si el numero se divide entre 3 devuelva 'Fizz'
+    def test_fizz(self):
+        self.assertEqual(fizzbuzz(3), "Fizz")
+        self.assertEqual(fizzbuzz(6), "Fizz")
+        self.assertEqual(fizzbuzz(9), "Fizz")
+
 
 if __name__ == "__main__":
     unittest.main()
