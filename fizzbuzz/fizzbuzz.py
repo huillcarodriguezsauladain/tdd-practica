@@ -4,6 +4,9 @@ Modulo FizzBuzz desarrollado con TDD (Desarrollo Guiado por Pruebas).
 
 
 def fizzbuzz(n):
+    # Ciclo 4: Si se divide entre 3 y 5 (es decir, entre 15), devolvemos "FizzBuzz" primero
+    if n % 15 == 0:
+        return "FizzBuzz"
     # Ciclo 2: Si el numero se divide entre 3, devolvemos "Fizz"
     if n % 3 == 0:
         return "Fizz"
