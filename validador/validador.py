@@ -14,6 +14,10 @@ def validar_password(pwd):
     if not any(c.isupper() for c in pwd):
         errores.append("Al menos una mayúscula")
 
+    # Ciclo 3: Revisamos que contenga al menos una letra minuscula
+    if not any(c.islower() for c in pwd):
+        errores.append("Al menos una minúscula")
+
     return {
         "valida": len(errores) == 0,
         "errores": errores
