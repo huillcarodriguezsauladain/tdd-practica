@@ -25,6 +25,25 @@ class TestFizzBuzz(unittest.TestCase):
         self.assertEqual(fizzbuzz(15), "FizzBuzz")
         self.assertEqual(fizzbuzz(30), "FizzBuzz")
 
+    # Ciclo 5: Refactor y prueba integral con subTest para probar muchos casos en una sola pasada
+    def test_rango_completo(self):
+        esperados = {
+            1: "1",
+            2: "2",
+            3: "Fizz",
+            4: "4",
+            5: "Buzz",
+            6: "Fizz",
+            10: "Buzz",
+            14: "14",
+            15: "FizzBuzz",
+            30: "FizzBuzz",
+            45: "FizzBuzz",
+        }
+        for n, esperado in esperados.items():
+            with self.subTest(n=n):
+                self.assertEqual(fizzbuzz(n), esperado)
+
 
 if __name__ == "__main__":
     unittest.main()
