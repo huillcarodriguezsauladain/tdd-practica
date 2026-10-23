@@ -14,6 +14,12 @@ class TestValidarPassword(unittest.TestCase):
         # Verificamos que con 8 o mas caracteres no arroje error de longitud
         self.assertNotIn("Mínimo 8 caracteres", res["errores"])
 
+    # Ciclo 2: Revisamos que tenga al menos una letra mayuscula
+    def test_sin_mayuscula(self):
+        res = validar_password("abcdefg1!")
+        self.assertFalse(res["valida"])
+        self.assertIn("Al menos una mayúscula", res["errores"])
+
 
 if __name__ == "__main__":
     unittest.main()
