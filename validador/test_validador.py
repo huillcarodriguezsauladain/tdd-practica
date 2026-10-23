@@ -32,6 +32,12 @@ class TestValidarPassword(unittest.TestCase):
         self.assertFalse(res["valida"])
         self.assertIn("Al menos un dígito", res["errores"])
 
+    # Ciclo 5: Revisamos que tenga al menos un caracter especial (!@#$%^&*)
+    def test_sin_caracter_especial(self):
+        res = validar_password("Abcdefg12")
+        self.assertFalse(res["valida"])
+        self.assertIn("Al menos un carácter especial", res["errores"])
+
 
 if __name__ == "__main__":
     unittest.main()

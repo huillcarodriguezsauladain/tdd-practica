@@ -22,6 +22,11 @@ def validar_password(pwd):
     if not any(c.isdigit() for c in pwd):
         errores.append("Al menos un dígito")
 
+    # Ciclo 5: Revisamos que contenga al menos un caracter especial de la lista (!@#$%^&*)
+    caracteres_especiales = "!@#$%^&*"
+    if not any(c in caracteres_especiales for c in pwd):
+        errores.append("Al menos un carácter especial")
+
     return {
         "valida": len(errores) == 0,
         "errores": errores
