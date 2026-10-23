@@ -18,6 +18,10 @@ def validar_password(pwd):
     if not any(c.islower() for c in pwd):
         errores.append("Al menos una minúscula")
 
+    # Ciclo 4: Revisamos que contenga al menos un numero o digito
+    if not any(c.isdigit() for c in pwd):
+        errores.append("Al menos un dígito")
+
     return {
         "valida": len(errores) == 0,
         "errores": errores
